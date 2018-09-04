@@ -20,7 +20,6 @@ export default class RepoList extends React.PureComponent {
 
         const alphaSort = {
             filter: (a, b) => {
-                console.log('A NAME', a.name)
                 if (a.name < b.name) return -1;
                 if (a.name > b.name) return 1;
                 return 0;

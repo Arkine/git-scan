@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-export default (query) => {
+export default (url, query) => {
     let queryString = '';
 
     if (query) {
@@ -11,7 +11,7 @@ export default (query) => {
         }
     }
 
-    return Axios.get(`https://api.github.com/repositories?=${queryString}`)
+    return Axios.get(`${url}?=${queryString}`)
             .then(data => {
                 return data;
             })

@@ -2,9 +2,10 @@ export default {
     colors: {
         white: '#fff',
         grey: '#ccc',
+        light_grey: '#ccc',
     },
     font: {
-        rootSize: '20px',
+        root_size: '20px',
     },
     body: {
         width: '50rem',

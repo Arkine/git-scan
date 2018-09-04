@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
 import ListRating from './listRating';
 
@@ -12,7 +12,11 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    padding: 1rem 0;
+    padding: 1rem;
+
+    &:nth-of-type(even) {
+        background-color: ${props => props.theme.colors.light_grey};
+    }
 `;
 
 export default class ListItem extends React.PureComponent {
