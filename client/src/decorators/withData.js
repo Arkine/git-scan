@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 
-import Loading from '../Loading';
+import Loading from 'app/components/Loading';
 
 export const withData = (query, fetchOpts) => (Component) => {
     return class extends React.Component {

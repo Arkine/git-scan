@@ -3,7 +3,7 @@ import React from 'react';
 import RepoList from '../RepoList';
 import Loading from '../Loading';
 
-import {withData} from '../decorators/withData';
+import {withData} from 'app/decorators/withData';
 
 @withData('https://api.github.com/repositories')
 export default class Home extends React.Component {
