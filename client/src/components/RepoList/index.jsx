@@ -1,9 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import sort from '../../helpers/sort';
+
 import ListItem from './listItem';
 
 export default class RepoList extends React.PureComponent {
+
+    sortItems(filter) {
+
+    }
 
     renderRepoItems() {
         const {repos} = this.props;
@@ -12,7 +18,18 @@ export default class RepoList extends React.PureComponent {
             return null;
         }
 
-        return repos.data.map(repo => <ListItem key={`repo-${repo.id}`}>{repo.name}</ListItem>);
+        const alphaSort = {
+            filter: (a, b) => {
+                console.log('A NAME', a.name)
+                if (a.name < b.name) return -1;
+                if (a.name > b.name) return 1;
+                return 0;
+            }
+        };
+
+        const sorted = sort(repos.data, alphaSort.filter);
+
+        return sorted.map((repo, i) => <ListItem key={`repo-${i}`} repo={repo} />);
     }
     
     render() {
