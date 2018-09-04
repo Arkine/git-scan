@@ -12,7 +12,7 @@ const BodyWrapper = styled.div`
     border: 1px solid red;
 `;
 
-export default class Body extends React.Component {
+export default class Body extends React.PureComponent {
     render() {
         return (
             <BodyWrapper>

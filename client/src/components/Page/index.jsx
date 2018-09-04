@@ -4,7 +4,7 @@ import Header from './header';
 import Body from './body';
 import Footer from './footer';
 
-export default class Page extends React.Component {
+export default class Page extends React.PureComponent {
     render() {
         return(
             <React.Fragment>

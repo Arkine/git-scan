@@ -1,9 +1,12 @@
 import React from 'react';
 import Axios from 'axios';
 
-export const withData = (query) => (Component) => {
+import Loading from '../Loading';
+
+export const withData = (query, fetchOpts) => (Component) => {
     return class extends React.Component {
         state = {
+            loading: false,
             data: [],
         }
         
@@ -16,9 +19,8 @@ export const withData = (query) => (Component) => {
         }
 
         fetchData = () => {
-            Axios.get(query)
+            Axios.get(query, fetchOpts)
                 .then(data => {
-                    console.log('DATA', data);
                     this.setState({
                         data,
                     });
@@ -29,6 +31,9 @@ export const withData = (query) => (Component) => {
         }
 
         render() {
+            if (this.state.loading) {
+                return <Loading />;
+            }
             return(
                 <Component {...this.props} {...this.state} />
             );
