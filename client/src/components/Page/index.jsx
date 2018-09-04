@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import Header from './header';
 import Body from './body';
@@ -13,7 +12,9 @@ export default class Page extends React.Component {
                     <Header />
                 </header>
                 <main>
-                    <Body />
+                    <Body>
+                        {this.props.children}
+                    </Body>
                 </main>
                 <footer>
                     <Footer />

@@ -5,7 +5,7 @@
         "styled-components",
 		"transform-object-rest-spread",
         "transform-class-properties",
-        "transform-decorators",
+        "transform-decorators-legacy",
 		"transform-runtime"
 	]
 }
