@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 
 import Page from 'app/components/Page';
 
-import theme from './theme';
+import theme from '../theme';
 
 import Home from './Pages/home';
 import List from './list';

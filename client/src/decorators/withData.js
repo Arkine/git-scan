@@ -6,7 +6,7 @@ import Loading from 'app/components/Loading';
 export const withData = (query, fetchOpts) => (Component) => {
     return class extends React.Component {
         state = {
-            loading: false,
+            loading: true,
             data: [],
         }
         
@@ -15,15 +15,14 @@ export const withData = (query, fetchOpts) => (Component) => {
 
             this.setState({
                 data,
+                loading: false,
             });
         }
 
         fetchData = () => {
-            Axios.get(query, fetchOpts)
+            return Axios.get(query, fetchOpts)
                 .then(data => {
-                    this.setState({
-                        data,
-                    });
+                   return data;
                 })
                 .catch(error => {
                     throw Error(error.message);
@@ -34,6 +33,7 @@ export const withData = (query, fetchOpts) => (Component) => {
             if (this.state.loading) {
                 return <Loading />;
             }
+
             return(
                 <Component {...this.props} {...this.state} />
             );

@@ -16,7 +16,6 @@ export default class Home extends React.Component {
         console.log(this.props);
         return(
             <div>
-                <Loading isLoading={this.state.loading} />
                 <RepoList repos={this.props.data}/>
             </div>
         );
